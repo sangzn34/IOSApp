@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E06FCFBE1F9673F800F931E6 /* square-xxl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E06FCF9D1F96531C00F931E6 /* square-xxl.jpg */; };
+		E06FCFC01F96781000F931E6 /* ViewCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FCFBF1F96781000F931E6 /* ViewCameraController.swift */; };
+		E08EF7541F97B89300D33156 /* TableViewCellTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08EF7531F97B89300D33156 /* TableViewCellTraining.swift */; };
+		E08EF7551F97B9E600D33156 /* TableViewCellTraining.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08EF7521F97B88700D33156 /* TableViewCellTraining.xib */; };
 		E0E5F4511F93A6CE002A8CA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E5F4501F93A6CE002A8CA3 /* AppDelegate.swift */; };
 		E0E5F4531F93A6CE002A8CA3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E5F4521F93A6CE002A8CA3 /* ViewController.swift */; };
 		E0E5F4561F93A6CE002A8CA3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0E5F4541F93A6CE002A8CA3 /* Main.storyboard */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E06FCF9D1F96531C00F931E6 /* square-xxl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "square-xxl.jpg"; sourceTree = "<group>"; };
+		E06FCFBF1F96781000F931E6 /* ViewCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCameraController.swift; sourceTree = "<group>"; };
+		E08EF7521F97B88700D33156 /* TableViewCellTraining.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellTraining.xib; sourceTree = "<group>"; };
+		E08EF7531F97B89300D33156 /* TableViewCellTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellTraining.swift; sourceTree = "<group>"; };
 		E0E5F44D1F93A6CE002A8CA3 /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0E5F4501F93A6CE002A8CA3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0E5F4521F93A6CE002A8CA3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -35,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E06FCFBD1F9656A900F931E6 /* img */ = {
+			isa = PBXGroup;
+			children = (
+				E06FCF9D1F96531C00F931E6 /* square-xxl.jpg */,
+			);
+			path = img;
+			sourceTree = "<group>";
+		};
 		E0E5F4441F93A6CE002A8CA3 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +74,12 @@
 				E0E5F4521F93A6CE002A8CA3 /* ViewController.swift */,
 				E0E5F4541F93A6CE002A8CA3 /* Main.storyboard */,
 				E0E5F4571F93A6CE002A8CA3 /* Assets.xcassets */,
+				E06FCFBD1F9656A900F931E6 /* img */,
 				E0E5F4591F93A6CE002A8CA3 /* LaunchScreen.storyboard */,
 				E0E5F45C1F93A6CE002A8CA3 /* Info.plist */,
+				E08EF7531F97B89300D33156 /* TableViewCellTraining.swift */,
+				E08EF7521F97B88700D33156 /* TableViewCellTraining.xib */,
+				E06FCFBF1F96781000F931E6 /* ViewCameraController.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -125,7 +145,9 @@
 			files = (
 				E0E5F45B1F93A6CE002A8CA3 /* LaunchScreen.storyboard in Resources */,
 				E0E5F4581F93A6CE002A8CA3 /* Assets.xcassets in Resources */,
+				E08EF7551F97B9E600D33156 /* TableViewCellTraining.xib in Resources */,
 				E0E5F4561F93A6CE002A8CA3 /* Main.storyboard in Resources */,
+				E06FCFBE1F9673F800F931E6 /* square-xxl.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,6 +159,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E5F4531F93A6CE002A8CA3 /* ViewController.swift in Sources */,
+				E08EF7541F97B89300D33156 /* TableViewCellTraining.swift in Sources */,
+				E06FCFC01F96781000F931E6 /* ViewCameraController.swift in Sources */,
 				E0E5F4511F93A6CE002A8CA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,10 +235,10 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos11.0;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -262,9 +286,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
+				SDKROOT = iphoneos11.0;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -277,6 +301,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RCRA3A55FF;
 				INFOPLIST_FILE = QRCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teerapat.QRCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,6 +317,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RCRA3A55FF;
 				INFOPLIST_FILE = QRCode/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.teerapat.QRCode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
