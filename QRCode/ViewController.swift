@@ -9,80 +9,67 @@
 import UIKit
 import AVFoundation
 
-class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-    
+struct ItemTraning {
+    let cell:Int!
+    let TRNo:String!
+    let Topic:String!
+}
+
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, ContainerToTableTraining {
+    var ListItemTraining = [ItemTraning]()
     @IBOutlet weak var square: UIImageView!
     @IBOutlet weak var btnOpenCamera: UIButton!
+    @IBOutlet weak var tbTraining: UITableView!
     var video = AVCaptureVideoPreviewLayer()
     var session = AVCaptureSession()
+    var cameraViewController: ViewCameraController?
     private var toggleCamera:Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        
-        
-        self.view.bringSubview(toFront: square)
-        
-        
+        tbTraining.delegate = self
+        tbTraining.dataSource = self
+        ListItemTraining.append(ItemTraning(cell:1, TRNo: "1", Topic: "No.1"))
     }
     
     @IBAction func OpenCamera(_ sender: Any) {
-        toggleCamera = !toggleCamera;
-        if(toggleCamera){
-            if let inputs = session.inputs as? [AVCaptureDeviceInput] {
-                for input in inputs {
-                    session.removeInput(input)
-                }
-            }
-            return
+        for item in ListItemTraining {
+            print(item.Topic)
         }
-        session = AVCaptureSession()
-        let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
-        do{
-            let input = try AVCaptureDeviceInput(device: captureDevice!)
-            session.addInput(input)
-            
+        let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "ViewCamera") as! ViewCameraController
+        self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        for item in ListItemTraining {
+            print(item.Topic)
         }
-        catch{
-            print("ERROR")
-        }
-        
-        let output = AVCaptureMetadataOutput()
-        session.addOutput(output)
-        output.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        output.metadataObjectTypes = [.qr,.ean8, .ean13, .pdf417]
-        
-        video = AVCaptureVideoPreviewLayer(session: session)
-        video.frame = view.layer.bounds
-        view.layer.addSublayer(video)
-        
-        
-        self.view.bringSubview(toFront: btnOpenCamera)
-        session.startRunning()
+        /*cameraViewController = segue.destination as? ViewCameraController
+        cameraViewController!.containerToMaster = (self as! ContainerToTableTraining)*/
+        //self.navigationController?.pushViewController(secondViewController, animated: true)
+    }
+    
+    func getListTrainingCount() -> Int{
+        return ListItemTraining.count
+    }
+    
+    func addListTraining(Item:ItemTraning){
+        ListItemTraining.append(Item)
+        print("yes")
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return ListItemTraining.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = Bundle.main.loadNibNamed("TableViewCellTraining", owner: self, options: nil)?.first as! TableViewCellTraining
+        cell.LblTRNo.text = ListItemTraining[indexPath.row].TRNo
+        cell.LblTopic.text = ListItemTraining[indexPath.row].Topic
+        return cell
     }
     
     
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
-        if metadataObjects != nil && metadataObjects.count != 0{
-            if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject{
-                if object.type == AVMetadataObject.ObjectType.qr{
-                    let alert = UIAlertController(title:"QR Code", message: object.stringValue, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:"Retake", style: .default, handler: (nil)))
-                    alert.addAction(UIAlertAction(title:"Copy", style: .default, handler: { (nil) in
-                        UIPasteboard.general.string = object.stringValue
-                    }))
-                    present(alert, animated: true, completion: nil)
-                }else{
-                    let alert = UIAlertController(title:"Other", message: object.stringValue, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:"Retake", style: .default, handler: (nil)))
-                    alert.addAction(UIAlertAction(title:"Copy", style: .default, handler: { (nil) in
-                        UIPasteboard.general.string = object.stringValue
-                    }))
-                    present(alert, animated: true, completion: nil)
-                }
-            }
-        }
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
