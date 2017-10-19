@@ -24,6 +24,16 @@
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>it.ttfts.co.th</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>Can I use the camera?</string>
 	<key>UILaunchStoryboardName</key>
