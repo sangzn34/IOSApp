@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		E0200B0B1F9911A50063CE35 /* ViewControllerTrainingDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0200B0A1F9911A50063CE35 /* ViewControllerTrainingDate.swift */; };
+		E06D6F591F9AE85C0077CD8A /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D6F581F9AE85C0077CD8A /* Center.swift */; };
+		E06D6F5B1F9B00FE0077CD8A /* ViewControllerEmpList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D6F5A1F9B00FE0077CD8A /* ViewControllerEmpList.swift */; };
+		E06D6F5E1F9B22FC0077CD8A /* TableViewCellEmpList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D6F5C1F9B22FC0077CD8A /* TableViewCellEmpList.swift */; };
+		E06D6F5F1F9B22FC0077CD8A /* TableViewCellEmpList.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06D6F5D1F9B22FC0077CD8A /* TableViewCellEmpList.xib */; };
 		E06FCFBE1F9673F800F931E6 /* square-xxl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E06FCF9D1F96531C00F931E6 /* square-xxl.jpg */; };
 		E06FCFC01F96781000F931E6 /* ViewCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FCFBF1F96781000F931E6 /* ViewCameraController.swift */; };
 		E08EF7541F97B89300D33156 /* TableViewCellTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08EF7531F97B89300D33156 /* TableViewCellTraining.swift */; };
@@ -21,6 +25,10 @@
 
 /* Begin PBXFileReference section */
 		E0200B0A1F9911A50063CE35 /* ViewControllerTrainingDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTrainingDate.swift; sourceTree = "<group>"; };
+		E06D6F581F9AE85C0077CD8A /* Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
+		E06D6F5A1F9B00FE0077CD8A /* ViewControllerEmpList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEmpList.swift; sourceTree = "<group>"; };
+		E06D6F5C1F9B22FC0077CD8A /* TableViewCellEmpList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellEmpList.swift; sourceTree = "<group>"; };
+		E06D6F5D1F9B22FC0077CD8A /* TableViewCellEmpList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellEmpList.xib; sourceTree = "<group>"; };
 		E06FCF9D1F96531C00F931E6 /* square-xxl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "square-xxl.jpg"; sourceTree = "<group>"; };
 		E06FCFBF1F96781000F931E6 /* ViewCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCameraController.swift; sourceTree = "<group>"; };
 		E08EF7521F97B88700D33156 /* TableViewCellTraining.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellTraining.xib; sourceTree = "<group>"; };
@@ -83,6 +91,10 @@
 				E08EF7521F97B88700D33156 /* TableViewCellTraining.xib */,
 				E06FCFBF1F96781000F931E6 /* ViewCameraController.swift */,
 				E0200B0A1F9911A50063CE35 /* ViewControllerTrainingDate.swift */,
+				E06D6F581F9AE85C0077CD8A /* Center.swift */,
+				E06D6F5A1F9B00FE0077CD8A /* ViewControllerEmpList.swift */,
+				E06D6F5C1F9B22FC0077CD8A /* TableViewCellEmpList.swift */,
+				E06D6F5D1F9B22FC0077CD8A /* TableViewCellEmpList.xib */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -147,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0E5F45B1F93A6CE002A8CA3 /* LaunchScreen.storyboard in Resources */,
+				E06D6F5F1F9B22FC0077CD8A /* TableViewCellEmpList.xib in Resources */,
 				E0E5F4581F93A6CE002A8CA3 /* Assets.xcassets in Resources */,
 				E08EF7551F97B9E600D33156 /* TableViewCellTraining.xib in Resources */,
 				E0E5F4561F93A6CE002A8CA3 /* Main.storyboard in Resources */,
@@ -162,9 +175,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0200B0B1F9911A50063CE35 /* ViewControllerTrainingDate.swift in Sources */,
+				E06D6F5B1F9B00FE0077CD8A /* ViewControllerEmpList.swift in Sources */,
 				E0E5F4531F93A6CE002A8CA3 /* ViewController.swift in Sources */,
+				E06D6F5E1F9B22FC0077CD8A /* TableViewCellEmpList.swift in Sources */,
 				E08EF7541F97B89300D33156 /* TableViewCellTraining.swift in Sources */,
 				E06FCFC01F96781000F931E6 /* ViewCameraController.swift in Sources */,
+				E06D6F591F9AE85C0077CD8A /* Center.swift in Sources */,
 				E0E5F4511F93A6CE002A8CA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
