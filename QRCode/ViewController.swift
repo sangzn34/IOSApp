@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
     var refreshControl = UIRefreshControl()
     var selectRow:ItemTR = ItemTR(TRNo: "", TRTopic: "")
-    
+    let UrlApi:String = "http://it.ttfts.co.th/webapi/api/training/list"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,13 +40,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tbTraining.refreshControl = self.refreshControl
         self.refreshControl.addTarget(self, action: #selector(didRefreshList), for: .valueChanged)
         ListItemTraining.append(ItemTraning(cell:1, TRNo: "1", Topic: "No.1"))
-        //LoadData()
+        Center.GetApiData(url: UrlApi, type: ItemTR.self, completion: apiCompletion)
     }
     
     @objc func didRefreshList(){
-        LoadData()
+        Center.GetApiData(url: UrlApi, type: ItemTR.self, completion: apiCompletion)
         self.tbTraining.reloadData()
         refreshControl.endRefreshing()
+    }
+    
+    func apiCompletion(_ List:[ItemTR]){
+        trainingList = List
+        DispatchQueue.main.async {
+            self.tbTraining.reloadData()
+        }
     }
     
     /*func StartLoading(){
@@ -65,24 +72,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         UIApplication.shared.endIgnoringInteractionEvents()
     }*/
     
-    func LoadData(){
-        //self.StartLoading()
-        var request = URLRequest(url: URL(string: "http://it.ttfts.co.th/webapi/api/training")!)
-        request.addValue("dXNlcm5hbWU6cGFzc3dvcmQ=", forHTTPHeaderField: "API_KEY")
-        URLSession.shared.dataTask(with: request){ (data, response, error) in
-            do{
-                /*if let stringData = String(data: data!, encoding: String.Encoding.utf8) {
-                    print(stringData)
-                }*/
-                self.trainingList = try JSONDecoder().decode([ItemTR].self, from: data!)
-                self.tbTraining.reloadData()
-                //StopLoading()
-            }
-            catch{
-                print(error)
-            }
-        }.resume()
-    }
     
     @IBAction func OpenCamera(_ sender: Any) {
         for item in ListItemTraining {
@@ -135,7 +124,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell = Bundle.main.loadNibNamed("TableViewCellTraining", owner: self, options: nil)?.first as! TableViewCellTraining
         cell.LblTRNo.text = trainingList[indexPath.row].TRNo
         cell.LblTopic.text = trainingList[indexPath.row].TRTopic
-        print(indexPath.section)
         return cell
     }
     
