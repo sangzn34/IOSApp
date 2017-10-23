@@ -7,18 +7,9 @@
 //
 
 import UIKit
-struct ItemTRDate:Decodable {
-    var TRDateID:Int
-    var DateNo:String
-    var DateForm:String
-    var DateTo:String
-    var TimeForm:String
-    var TimeTo:String
-}
+
 class ViewControllerTrainingDate: UITableViewController{
 
-    @IBOutlet weak var lbTRNo: UILabel!
-    @IBOutlet weak var lbTRTopic: UILabel!
     var TRNo:String = ""
     var TRTopic:String = ""
     @IBOutlet weak var tbTRDate: UITableView!
@@ -38,8 +29,6 @@ class ViewControllerTrainingDate: UITableViewController{
     
     @objc func didRefreshList(){
         Center.GetApiData(url: UrlApi+TRNo, type: ItemTRDate.self, completion: apiCompletion)
-        self.tbTRDate.reloadData()
-        tbTRDate.refreshControl?.endRefreshing()
     }
     
     func apiCompletion(_ List:[ItemTRDate]){
@@ -56,18 +45,19 @@ class ViewControllerTrainingDate: UITableViewController{
         }
         DispatchQueue.main.async {
             self.tbTRDate.reloadData()
+            self.tbTRDate.refreshControl?.endRefreshing()
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.tbTRDate.deselectRow(at: indexPath, animated: .init())
         selectIndex = indexPath.row
-        performSegue(withIdentifier: "TDtoTEmp", sender: nil)
+        performSegue(withIdentifier: "TDtoWT", sender: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "TDtoTEmp"{
-            let vc = segue.destination as! ViewControllerEmpList
+        if segue.identifier == "TDtoWT"{
+            let vc = segue.destination as! ViewControllerWhatTime
             vc.ItemDate.TRDateID = ListDate[selectIndex].TRDateID
             vc.ItemDate.DateNo = ListDate[selectIndex].DateNo
             vc.ItemDate.DateForm = ListDate[selectIndex].DateForm

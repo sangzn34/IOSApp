@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13240" systemVersion="16G29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DataToExport" representedClassName="DataToExport" syncable="YES">
+        <attribute name="afternoon_come" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id_emp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="morning_come" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ot_come" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="trdateid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tremplist_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Date" representedClassName="Date" syncable="YES">
+        <attribute name="dateform" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateno" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeform" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeto" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trdateid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="trno" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="EmpList" representedClassName="EmpList" syncable="YES">
+        <attribute name="afternoon_come" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="id_emp" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="morning_come" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ot_come" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="trdateid" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="tremplist_id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="user_name" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Training" representedClassName="Training" syncable="YES">
+        <attribute name="approve_m" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="approve_t" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="ss" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="trno" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="trtopic" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Training" positionX="-63" positionY="-18" width="128" height="120"/>
+        <element name="Date" positionX="-54" positionY="27" width="128" height="150"/>
+        <element name="EmpList" positionX="-36" positionY="36" width="128" height="150"/>
+        <element name="DataToExport" positionX="-18" positionY="90" width="128" height="150"/>
+    </elements>
+</model>

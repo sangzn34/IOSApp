@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		E0200B0B1F9911A50063CE35 /* ViewControllerTrainingDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0200B0A1F9911A50063CE35 /* ViewControllerTrainingDate.swift */; };
+		E0292CA61F9CEBF600B9E1B8 /* ViewControllerWhatTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0292CA51F9CEBF600B9E1B8 /* ViewControllerWhatTime.swift */; };
+		E0292CA91F9D06D600B9E1B8 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E0292CA71F9D06D600B9E1B8 /* Model.xcdatamodeld */; };
 		E06D6F591F9AE85C0077CD8A /* Center.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D6F581F9AE85C0077CD8A /* Center.swift */; };
 		E06D6F5B1F9B00FE0077CD8A /* ViewControllerEmpList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D6F5A1F9B00FE0077CD8A /* ViewControllerEmpList.swift */; };
 		E06D6F5E1F9B22FC0077CD8A /* TableViewCellEmpList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06D6F5C1F9B22FC0077CD8A /* TableViewCellEmpList.swift */; };
 		E06D6F5F1F9B22FC0077CD8A /* TableViewCellEmpList.xib in Resources */ = {isa = PBXBuildFile; fileRef = E06D6F5D1F9B22FC0077CD8A /* TableViewCellEmpList.xib */; };
 		E06FCFBE1F9673F800F931E6 /* square-xxl.jpg in Resources */ = {isa = PBXBuildFile; fileRef = E06FCF9D1F96531C00F931E6 /* square-xxl.jpg */; };
 		E06FCFC01F96781000F931E6 /* ViewCameraController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06FCFBF1F96781000F931E6 /* ViewCameraController.swift */; };
+		E073488A1F9DB78A00A1675E /* Date+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07348821F9DB78A00A1675E /* Date+CoreDataClass.swift */; };
+		E073488B1F9DB78A00A1675E /* Date+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07348831F9DB78A00A1675E /* Date+CoreDataProperties.swift */; };
+		E073488C1F9DB78A00A1675E /* DataToExport+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07348841F9DB78A00A1675E /* DataToExport+CoreDataClass.swift */; };
+		E073488D1F9DB78A00A1675E /* DataToExport+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07348851F9DB78A00A1675E /* DataToExport+CoreDataProperties.swift */; };
+		E073488E1F9DB78A00A1675E /* EmpList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07348861F9DB78A00A1675E /* EmpList+CoreDataClass.swift */; };
+		E073488F1F9DB78A00A1675E /* EmpList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07348871F9DB78A00A1675E /* EmpList+CoreDataProperties.swift */; };
+		E07348901F9DB78A00A1675E /* Training+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07348881F9DB78A00A1675E /* Training+CoreDataClass.swift */; };
+		E07348911F9DB78A00A1675E /* Training+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07348891F9DB78A00A1675E /* Training+CoreDataProperties.swift */; };
+		E07348941F9DB9D200A1675E /* PersistenceServce.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07348931F9DB9D200A1675E /* PersistenceServce.swift */; };
 		E08EF7541F97B89300D33156 /* TableViewCellTraining.swift in Sources */ = {isa = PBXBuildFile; fileRef = E08EF7531F97B89300D33156 /* TableViewCellTraining.swift */; };
 		E08EF7551F97B9E600D33156 /* TableViewCellTraining.xib in Resources */ = {isa = PBXBuildFile; fileRef = E08EF7521F97B88700D33156 /* TableViewCellTraining.xib */; };
 		E0E5F4511F93A6CE002A8CA3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0E5F4501F93A6CE002A8CA3 /* AppDelegate.swift */; };
@@ -25,12 +36,23 @@
 
 /* Begin PBXFileReference section */
 		E0200B0A1F9911A50063CE35 /* ViewControllerTrainingDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerTrainingDate.swift; sourceTree = "<group>"; };
+		E0292CA51F9CEBF600B9E1B8 /* ViewControllerWhatTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerWhatTime.swift; sourceTree = "<group>"; };
+		E0292CA81F9D06D600B9E1B8 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		E06D6F581F9AE85C0077CD8A /* Center.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Center.swift; sourceTree = "<group>"; };
 		E06D6F5A1F9B00FE0077CD8A /* ViewControllerEmpList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerEmpList.swift; sourceTree = "<group>"; };
 		E06D6F5C1F9B22FC0077CD8A /* TableViewCellEmpList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellEmpList.swift; sourceTree = "<group>"; };
 		E06D6F5D1F9B22FC0077CD8A /* TableViewCellEmpList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellEmpList.xib; sourceTree = "<group>"; };
 		E06FCF9D1F96531C00F931E6 /* square-xxl.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "square-xxl.jpg"; sourceTree = "<group>"; };
 		E06FCFBF1F96781000F931E6 /* ViewCameraController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCameraController.swift; sourceTree = "<group>"; };
+		E07348821F9DB78A00A1675E /* Date+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E07348831F9DB78A00A1675E /* Date+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E07348841F9DB78A00A1675E /* DataToExport+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataToExport+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E07348851F9DB78A00A1675E /* DataToExport+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DataToExport+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E07348861F9DB78A00A1675E /* EmpList+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmpList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E07348871F9DB78A00A1675E /* EmpList+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmpList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E07348881F9DB78A00A1675E /* Training+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Training+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E07348891F9DB78A00A1675E /* Training+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Training+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E07348931F9DB9D200A1675E /* PersistenceServce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceServce.swift; sourceTree = "<group>"; };
 		E08EF7521F97B88700D33156 /* TableViewCellTraining.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellTraining.xib; sourceTree = "<group>"; };
 		E08EF7531F97B89300D33156 /* TableViewCellTraining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellTraining.swift; sourceTree = "<group>"; };
 		E0E5F44D1F93A6CE002A8CA3 /* QRCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -61,6 +83,21 @@
 			path = img;
 			sourceTree = "<group>";
 		};
+		E07348921F9DB7CD00A1675E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E07348821F9DB78A00A1675E /* Date+CoreDataClass.swift */,
+				E07348831F9DB78A00A1675E /* Date+CoreDataProperties.swift */,
+				E07348841F9DB78A00A1675E /* DataToExport+CoreDataClass.swift */,
+				E07348851F9DB78A00A1675E /* DataToExport+CoreDataProperties.swift */,
+				E07348861F9DB78A00A1675E /* EmpList+CoreDataClass.swift */,
+				E07348871F9DB78A00A1675E /* EmpList+CoreDataProperties.swift */,
+				E07348881F9DB78A00A1675E /* Training+CoreDataClass.swift */,
+				E07348891F9DB78A00A1675E /* Training+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		E0E5F4441F93A6CE002A8CA3 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +117,7 @@
 		E0E5F44F1F93A6CE002A8CA3 /* QRCode */ = {
 			isa = PBXGroup;
 			children = (
+				E07348921F9DB7CD00A1675E /* Model */,
 				E0E5F4501F93A6CE002A8CA3 /* AppDelegate.swift */,
 				E0E5F4521F93A6CE002A8CA3 /* ViewController.swift */,
 				E0E5F4541F93A6CE002A8CA3 /* Main.storyboard */,
@@ -95,6 +133,9 @@
 				E06D6F5A1F9B00FE0077CD8A /* ViewControllerEmpList.swift */,
 				E06D6F5C1F9B22FC0077CD8A /* TableViewCellEmpList.swift */,
 				E06D6F5D1F9B22FC0077CD8A /* TableViewCellEmpList.xib */,
+				E0292CA51F9CEBF600B9E1B8 /* ViewControllerWhatTime.swift */,
+				E0292CA71F9D06D600B9E1B8 /* Model.xcdatamodeld */,
+				E07348931F9DB9D200A1675E /* PersistenceServce.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -176,11 +217,22 @@
 			files = (
 				E0200B0B1F9911A50063CE35 /* ViewControllerTrainingDate.swift in Sources */,
 				E06D6F5B1F9B00FE0077CD8A /* ViewControllerEmpList.swift in Sources */,
+				E073488E1F9DB78A00A1675E /* EmpList+CoreDataClass.swift in Sources */,
 				E0E5F4531F93A6CE002A8CA3 /* ViewController.swift in Sources */,
 				E06D6F5E1F9B22FC0077CD8A /* TableViewCellEmpList.swift in Sources */,
+				E07348911F9DB78A00A1675E /* Training+CoreDataProperties.swift in Sources */,
 				E08EF7541F97B89300D33156 /* TableViewCellTraining.swift in Sources */,
+				E073488B1F9DB78A00A1675E /* Date+CoreDataProperties.swift in Sources */,
+				E073488D1F9DB78A00A1675E /* DataToExport+CoreDataProperties.swift in Sources */,
+				E073488F1F9DB78A00A1675E /* EmpList+CoreDataProperties.swift in Sources */,
 				E06FCFC01F96781000F931E6 /* ViewCameraController.swift in Sources */,
 				E06D6F591F9AE85C0077CD8A /* Center.swift in Sources */,
+				E0292CA91F9D06D600B9E1B8 /* Model.xcdatamodeld in Sources */,
+				E07348941F9DB9D200A1675E /* PersistenceServce.swift in Sources */,
+				E073488C1F9DB78A00A1675E /* DataToExport+CoreDataClass.swift in Sources */,
+				E07348901F9DB78A00A1675E /* Training+CoreDataClass.swift in Sources */,
+				E0292CA61F9CEBF600B9E1B8 /* ViewControllerWhatTime.swift in Sources */,
+				E073488A1F9DB78A00A1675E /* Date+CoreDataClass.swift in Sources */,
 				E0E5F4511F93A6CE002A8CA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -368,6 +420,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E0292CA71F9D06D600B9E1B8 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E0292CA81F9D06D600B9E1B8 /* Model.xcdatamodel */,
+			);
+			currentVersion = E0292CA81F9D06D600B9E1B8 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E0E5F4451F93A6CE002A8CA3 /* Project object */;
 }

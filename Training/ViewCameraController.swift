@@ -17,6 +17,8 @@ class ViewCameraController: UIViewController, AVCaptureMetadataOutputObjectsDele
     var video = AVCaptureVideoPreviewLayer()
     let session = AVCaptureSession()
     var containerToMaster:ContainerToTableTraining?
+    var action = 0
+    var ItemDate:ItemTRDate = ItemTRDate.init(TRDateID: 0, DateNo: "", DateForm: "", DateTo: "", TimeForm: "", TimeTo: "")
     override func viewDidLoad() {
         super.viewDidLoad()
 

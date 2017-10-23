@@ -8,16 +8,6 @@
 
 import UIKit
 
-struct ItemEmpList:Decodable {
-    var TREmpList_id:Int
-    var TRDateID:Int
-    var ID_EMP:String
-    var USER_NAME:String
-    var Morning_Come:Int
-    var Afternoon_Come:Int
-    var OT_Come:Int
-}
-
 class ViewControllerEmpList: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tbEmpList: UITableView!
     var ItemDate:ItemTRDate = ItemTRDate.init(TRDateID: 0, DateNo: "", DateForm: "", DateTo: "", TimeForm: "", TimeTo: "")
@@ -26,31 +16,52 @@ class ViewControllerEmpList: UIViewController, UITableViewDelegate, UITableViewD
     let serialQueue = DispatchQueue(label: "queuename")
     let statusCome = [0: "ยังไม่ได้เช็คชื่อ", 1: "เช็คชื่อแล้ว"]
     let statucComeColor = [0: UIColor.init(red: 1, green: 72/255, blue: 72/255, alpha: 1), 1: UIColor.init(red: 51/255, green: 229/255, blue: 99/255, alpha: 1)]
+    var action = 0
+    let lbAction = [0: "เช้า", 1: "บ่าย", 2: "OT"]
+    @IBOutlet weak var navItem: UINavigationItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tbEmpList.dataSource = self
         tbEmpList.delegate = self
         tbEmpList.refreshControl = UIRefreshControl()
         tbEmpList.refreshControl?.addTarget(self, action: #selector(didRefreshList), for: .valueChanged)
+        navItem.title = "Emp List (\(lbAction[action] ?? ""))"
         Center.GetApiData(url: UrlApi+"\(ItemDate.TRDateID)", type: ItemEmpList.self, completion: ApiCompletion)
         // Do any additional setup after loading the view.
+    }
+    
+    @objc func didRefreshList(){
+        Center.GetApiData(url: UrlApi+"\(ItemDate.TRDateID)", type: ItemEmpList.self, completion: ApiCompletion)
     }
     
     func ApiCompletion(_ List:[ItemEmpList]){
         ListEmp = List
         DispatchQueue.main.async {
             self.tbEmpList.reloadData()
+            self.tbEmpList.refreshControl?.endRefreshing()
         }
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tbEmpList.deselectRow(at: indexPath, animated: .init())
+    @IBAction func touchScan(_ sender: Any) {
+        performSegue(withIdentifier: "TEmptoScan", sender: nil)
     }
     
-    @objc func didRefreshList(){
-        Center.GetApiData(url: UrlApi+"\(ItemDate.TRDateID)", type: ItemEmpList.self, completion: ApiCompletion)
-        tbEmpList.reloadData()
-        tbEmpList.refreshControl?.endRefreshing()
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TEmptoScan"{
+            let vc = segue.destination as! ViewCameraController
+            vc.ItemDate.TRDateID = ItemDate.TRDateID
+            vc.ItemDate.DateNo = ItemDate.DateNo
+            vc.ItemDate.DateForm = ItemDate.DateForm
+            vc.ItemDate.DateTo = ItemDate.DateTo
+            vc.ItemDate.TimeForm = ItemDate.TimeForm
+            vc.ItemDate.TimeTo = ItemDate.TimeTo
+            vc.action = self.action
+            
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tbEmpList.deselectRow(at: indexPath, animated: .init())
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
