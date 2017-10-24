@@ -19,17 +19,16 @@ class ViewCameraController: UIViewController, AVCaptureMetadataOutputObjectsDele
     var containerToMaster:ContainerToTableTraining?
     var action = 0
     var ItemDate:ItemTRDate = ItemTRDate.init(TRDateID: 0, DateNo: "", DateForm: "", DateTo: "", TimeForm: "", TimeTo: "")
+    var inCheck:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        
         let captureDevice = AVCaptureDevice.default(for: AVMediaType.video)
         do{
             let input = try AVCaptureDeviceInput(device: captureDevice!)
             session.addInput(input)
-            
         }
         catch{
             print("ERROR")
@@ -44,7 +43,6 @@ class ViewCameraController: UIViewController, AVCaptureMetadataOutputObjectsDele
         video.frame = view.layer.bounds
         view.layer.addSublayer(video)
         
-        
         session.startRunning()
     }
     
@@ -58,17 +56,27 @@ class ViewCameraController: UIViewController, AVCaptureMetadataOutputObjectsDele
     
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+        if inCheck {
+            return
+        }
         if metadataObjects.count != 0{
             if let object = metadataObjects[0] as? AVMetadataMachineReadableCodeObject{
                 if object.type == AVMetadataObject.ObjectType.qr{
                     let alert = UIAlertController(title:"QR Code", message: object.stringValue, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title:"Retake", style: .default, handler: (nil)))
-                    alert.addAction(UIAlertAction(title:"Copy", style: .default, handler: { (nil) in
-                        UIPasteboard.general.string = object.stringValue
-                        self.containerToMaster?.addListTraining(Item: ItemTraning(cell: 1, TRNo: "", Topic: object.stringValue))
+                    alert.addAction(UIAlertAction(title:"Retake", style: .default, handler: { (nil) in
+                        self.inCheck = false
                     }))
-                    present(alert, animated: true, completion: nil)
-                }else{
+                    alert.addAction(UIAlertAction(title:"Save", style: .default, handler: { (nil) in
+                        UIPasteboard.general.string = object.stringValue
+                        Center.GetApiData(url: "http://it.ttfts.co.th/webapi/api/training/check/emplist", method: "PUT", params: ["TRDateID": self.ItemDate.TRDateID, "ID_EMP": object.stringValue!, "action": self.action, "come": 1], type: String.self, completion: self.apiCompletion)
+                        self.inCheck = true
+                    }))
+                    if inCheck{
+                        return
+                    }
+                    present(alert, animated: true, completion: completionPresentQRCode)
+                }
+                /*else{
                     let alert = UIAlertController(title:"Other", message: object.stringValue, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title:"Retake", style: .default, handler: (nil)))
                     alert.addAction(UIAlertAction(title:"Copy", style: .default, handler: { (nil) in
@@ -76,11 +84,25 @@ class ViewCameraController: UIViewController, AVCaptureMetadataOutputObjectsDele
                         self.containerToMaster?.addListTraining(Item: ItemTraning(cell: 1, TRNo: "", Topic: object.stringValue))
                     }))
                     present(alert, animated: true, completion: nil)
-                }
+                }*/
             }
         }
     }
-
+    
+    func completionPresentQRCode(){
+        self.inCheck = true
+    }
+    
+    func apiCompletion(_ List:[String]){
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title:"Information", message: List[0].replacingOccurrences(of: "\"", with: ""), preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title:"OK", style: .default, handler: { (nil) in
+                self.inCheck = false
+            }))
+            self.present(alert, animated:  true, completion: nil)
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

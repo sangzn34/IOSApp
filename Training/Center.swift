@@ -59,6 +59,54 @@ class Center {
         }.resume()
     }
     
+    static func GetApiData<T>(url:String, method: String, params: [String: Any], type:T.Type, completion: @escaping ((_ List:[T]) -> Void)){
+        if URL(string:url) != nil {
+            var request = URLRequest(url: URL(string: url)!)
+            request.addValue("dXNlcm5hbWU6cGFzc3dvcmQ=", forHTTPHeaderField: "API_KEY")
+            request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+
+            if method == "POST" {
+                // convert key, value pairs into param string
+                let postString = params.map { "\($0.0)=\($0.1)" }.joined(separator: "&")
+                print(postString)
+                request.httpMethod = "POST"
+                request.httpBody = postString.data(using: String.Encoding.utf8)
+            }
+            else if method == "GET" {
+                _ = params.map { "\($0.0)=\($0.1)" }.joined(separator: "&")
+                request.httpMethod = "GET"
+            }
+            else if method == "PUT" {
+                let putString = params.map { "\($0.0)=\($0.1)" }.joined(separator: "&")
+                print(putString)
+                request.httpMethod = "PUT"
+                request.httpBody = putString.data(using: String.Encoding.utf8)
+            }
+            // Add other verbs here
+            var List = [T]()
+            URLSession.shared.dataTask(with: request){ (data, response, error) in
+                do{
+                    if let returnData = String(data: data!, encoding: .utf8) {
+                        if T.self == String.self{
+                            List.append(returnData as! T)
+                            completion(List)
+                        }
+                    }
+                    List = try JSONDecoder().decode([T].self, from: data!)
+                    completion(List)
+                }
+                catch{
+                    print(error)
+                    completion(List)
+                }
+            }.resume()
+        }
+        else{
+            // Could not make url. Is the url bad?
+            // You could call the completion handler (callback) here with some value indicating an error
+        }
+    }
+    
     static func convertDateFormater(_ date: String, formFormat: String, toFormat: String) -> String
     {
         let dateFormatter = DateFormatter()

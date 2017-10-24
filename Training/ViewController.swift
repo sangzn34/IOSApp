@@ -57,7 +57,6 @@ class ViewController: UITableViewController{
     }*/
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Row \(indexPath.row)selected")
         selectRow.TRNo = trainingList[indexPath.row].TRNo
         selectRow.TRTopic = trainingList[indexPath.row].TRTopic
         tbTraining.deselectRow(at: indexPath, animated: .init())
